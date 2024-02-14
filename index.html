@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Pad</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <div class="main">
+            <h1 class="heading text-white text-4xl text-center uppercase">✒️Quick<span class="text-yellow-400">Ink</span></h1>
+           
+            <div class="container flex items-center content-center justify-center">
+            <canvas id="signatureCanvas" width="400" height="200"></canvas>
+
+            <div id="colorOptions" class=" flex flex-col gap-5">
+                <button class="colorOption bg-black h-10 w-10 rounded-full" data-color="black"></button>
+                <button class="colorOption bg-red-600 h-10 w-10 rounded-full" data-color="red"></button>
+                <button class="colorOption bg-blue-700 h-10 w-10 rounded-full" data-color="blue"></button>
+            </div>
+        </div>
+        <div class="controls px-10 py-5 mt-5 flex items-center content-center justify-center gap-5">
+
+            <button class=" bg-black text-white py-2 px-4 rounded-lg" id="clearButton">Clear</button>
+            <button class=" bg-black text-white py-2 px-4 rounded-lg" id="copyButton">Copy</button>
+            <button class=" bg-black text-white py-2 px-4 rounded-lg" id="downloadButton">Download</button>
+            <button class=" bg-black text-white py-2 px-4 rounded-lg" id="shareButton">Share</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
