@@ -1,6 +1,5 @@
 const canvas = document.getElementById('signatureCanvas');
 const clearButton = document.getElementById('clearButton');
-const saveButton = document.getElementById('saveButton');
 const copyButton = document.getElementById('copyButton');
 const downloadButton = document.getElementById('downloadButton');
 const shareButton = document.getElementById('shareButton');
@@ -13,6 +12,10 @@ let currentColor = 'black'; // Default color
 canvas.addEventListener('mousedown', startDrawing);
 canvas.addEventListener('mousemove', draw);
 canvas.addEventListener('mouseup', endDrawing);
+
+canvas.addEventListener('touchstart', startDrawingTouch);
+canvas.addEventListener('touchmove', drawTouch);
+canvas.addEventListener('touchend', endDrawing);
 
 clearButton.addEventListener('click', clearCanvas);
 copyButton.addEventListener('click', copySignatureLink);
@@ -42,6 +45,16 @@ function draw(e) {
 function endDrawing() {
     isDrawing = false;
     ctx.beginPath();
+}
+
+function startDrawingTouch(e) {
+    e.preventDefault();
+    startDrawing(e.touches[0]);
+}
+
+function drawTouch(e) {
+    e.preventDefault();
+    draw(e.touches[0]);
 }
 
 function clearCanvas() {
